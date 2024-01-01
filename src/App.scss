@@ -1,0 +1,69 @@
+$transition-effect: all 0.2s ease;
+$grayColour: rgb(71, 71, 71);
+
+
+@font-face {
+  font-family: "poppinsRegular";
+  src: url("./Assets/fonts/Poppins/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: "poppinsMedium";
+  src: url("./Assets/fonts/Poppins/Poppins-Medium.ttf");
+}
+@font-face {
+  font-family: "poppinsSemiBold";
+  src: url("./Assets/fonts/Poppins/Poppins-SemiBold.ttf");
+}
+@font-face {
+  font-family: "poppinsBold";
+  src: url("./Assets/fonts/Poppins/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: "poppinsMediumItalic";
+  src: url("./Assets/fonts/Poppins/Poppins-MediumItalic.ttf");
+}
+@font-face {
+  font-family: "senRegular";
+  src: url("./Assets/fonts/Sen/static/Sen-Regular.ttf");
+}
+@font-face {
+  font-family: "senMedium";
+  src: url("./Assets/fonts/Sen/static/Sen-Medium.ttf");
+}
+@font-face {
+  font-family: "senSemiBold";
+  src: url("./Assets/fonts/Sen/static/Sen-SemiBold.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  font-size: 1.4vw;
+  font-family: "senMedium";
+  padding: 1vw 1.2vw;
+  cursor: pointer;
+  border-radius: 25vw;
+  transition: $transition-effect;
+  width: 14vw;
+  margin: 0 0.5vw;
+  .icon {
+    margin: 0 0.2vw;
+    font-size: 1.5vw;
+  }
+}
+button:hover {
+  border: 1px solid #fafafa;
+  background-color: black;
+  color: #fafafa;
+}
