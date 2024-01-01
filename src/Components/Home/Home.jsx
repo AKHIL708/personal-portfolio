@@ -11,6 +11,8 @@ import EmailIcon from "@mui/icons-material/Email";
 import DownloadIcon from "@mui/icons-material/Download";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import DehazeIcon from "@mui/icons-material/Dehaze";
+import capnxtLogo from "../../Assets/images/logo.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 // import personalImage from "../../Assets/images/IMG-20240101-WA0001.jpg";
@@ -24,6 +26,7 @@ function Home() {
   const [bgColour, setBgColour] = useState("black");
   const [fontColour, setFontColour] = useState("#FAFAFA");
   const [isNightMode, setIsNightMode] = useState(true);
+  const [showMobileLinks, setShowMobileLinks] = useState(false);
 
   const handleColourMode = () => {
     if (isNightMode) {
@@ -36,6 +39,14 @@ function Home() {
       setIsNightMode(true);
     }
   };
+
+  const [isMobileView, setIsMobileView] = useState(false);
+  useEffect(() => {
+    console.log(window.innerWidth);
+    if (window.innerWidth <= 768) {
+      setIsMobileView(true);
+    }
+  }, []);
 
   return (
     <>
@@ -59,53 +70,167 @@ function Home() {
             <h1>AKHIL</h1>
           </div>
           <nav className="links">
-            <p
-              onClick={() => {
-                window.scrollTo({
-                  top: 600,
-                  behavior: "smooth", // Add smooth scrolling behavior
-                });
-              }}
-            >
-              About
-            </p>
-            <p
-              onClick={() => {
-                window.scrollTo({
-                  top: 1300,
-                  behavior: "smooth", // Add smooth scrolling behavior
-                });
-              }}
-            >
-              Experience
-            </p>
-            <p
-              onClick={() => {
-                window.scrollTo({
-                  top: 2600,
-                  behavior: "smooth", // Add smooth scrolling behavior
-                });
-              }}
-            >
-              Projects
-            </p>
-            <p
-              onClick={() => {
-                window.scrollTo({
-                  top: 3200,
-                  behavior: "smooth", // Add smooth scrolling behavior
-                });
-              }}
-            >
-              Contact
-            </p>
-            <div className="mode-changer" onClick={() => handleColourMode()}>
-              {isNightMode ? (
-                <LightModeIcon className="icon" />
-              ) : (
-                <NightlightIcon className="icon" />
-              )}
-            </div>
+            {!isMobileView ? (
+              <>
+                <p
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 600,
+                      behavior: "smooth", // Add smooth scrolling behavior
+                    });
+                  }}
+                >
+                  About
+                </p>
+                <p
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 1300,
+                      behavior: "smooth", // Add smooth scrolling behavior
+                    });
+                  }}
+                >
+                  Skills
+                </p>
+                <p
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 2450,
+                      behavior: "smooth", // Add smooth scrolling behavior
+                    });
+                  }}
+                >
+                  Experience
+                </p>
+                <p
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 3100,
+                      behavior: "smooth", // Add smooth scrolling behavior
+                    });
+                  }}
+                >
+                  Projects
+                </p>
+                <p
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 4000,
+                      behavior: "smooth", // Add smooth scrolling behavior
+                    });
+                  }}
+                >
+                  Contact
+                </p>
+
+                <div
+                  className="mode-changer"
+                  onClick={() => handleColourMode()}
+                >
+                  {isNightMode ? (
+                    <LightModeIcon className="icon" />
+                  ) : (
+                    <NightlightIcon className="icon" />
+                  )}
+                </div>
+              </>
+            ) : (
+              <>
+                <>
+                  <div className="mobile-components">
+                    <div
+                      className="mode-changer"
+                      onClick={() => handleColourMode()}
+                    >
+                      {isNightMode ? (
+                        <LightModeIcon className="icon" />
+                      ) : (
+                        <NightlightIcon className="icon" />
+                      )}
+                    </div>
+                    <DehazeIcon
+                      className="three-line"
+                      onClick={() => {
+                        if (!showMobileLinks) {
+                          setShowMobileLinks(true);
+                        } else {
+                          setShowMobileLinks(false);
+                        }
+                      }}
+                    />
+                    {showMobileLinks && (
+                      <>
+                        {" "}
+                        <div
+                          className="mobile-nav-links"
+                          style={{
+                            backgroundColor: bgColour,
+                            color: fontColour,
+                            border : `1px solid ${fontColour}`
+                          }}
+                        >
+                          <h1
+                            onClick={() => {
+                              window.scrollTo({
+                                top: 600,
+                                behavior: "smooth",
+                              });
+                              setShowMobileLinks(false);
+                            }}
+                          >
+                            About
+                          </h1>
+                          <h1
+                            onClick={() => {
+                              window.scrollTo({
+                                top: 1350,
+                                behavior: "smooth",
+                              });
+                              setShowMobileLinks(false);
+                            }}
+                          >
+                            Skills
+                          </h1>
+                          <h1
+                            onClick={() => {
+                              window.scrollTo({
+                                top: 2350,
+                                behavior: "smooth",
+                              });
+                              setShowMobileLinks(false);
+                            }}
+                          >
+                            Experience
+                          </h1>
+                          <h1
+                            onClick={() => {
+                              window.scrollTo({
+                                top: 3000,
+                                behavior: "smooth",
+                              });
+                              setShowMobileLinks(false);
+                            }}
+                          >
+                            Projects
+                          </h1>
+                          <h1
+                            onClick={() => {
+                              window.scrollTo({
+                                top: 4000,
+                                behavior: "smooth",
+                              });
+                              setShowMobileLinks(false);
+                            }}
+                          >
+                            Contact
+                          </h1>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </>
+              </>
+            )}
           </nav>
         </header>
         <div className="profile-section">
@@ -432,6 +557,38 @@ function Home() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className="Experience">
+          <header>
+            <p>On Feild</p>
+            <h1>Experience</h1>
+          </header>
+          <div className="col">
+            <div
+              className="store-img"
+              style={{ backgroundImage: `url(${capnxtLogo})` }}
+            ></div>
+            <div
+              className="row"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="200"
+            >
+              <h1>
+                CapNxt Technologies <span>1+ year (intern)</span>
+              </h1>
+              <p>
+                During my one-year internship at CapNXT Technologies, I played a
+                pivotal role in the development of diverse digital solutions. I
+                actively contributed to the creation of responsive websites,
+                demonstrating proficiency in crafting interfaces that adapt
+                seamlessly across various devices. Additionally, my involvement
+                extended to designing and implementing dashboards, enhancing
+                user experiences through interactive and visually appealing data
+                representations.
+              </p>
             </div>
           </div>
         </div>
