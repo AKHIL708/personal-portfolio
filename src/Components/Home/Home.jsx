@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import bitmojiImage from "../../Assets/images/bitmoji.png";
 import personalImage from "../../Assets/images/background-removed-img.jpg";
-import Resume from "../../Assets/resumePdf/resume.pdf";
+import Akhil2024Resume from "../../Assets/resumePdf/Akhil2024Resume.pdf";
 import ecommerce from "../../Assets/images/ecommerce.png";
+import todo from "../../Assets/images/todo.png";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import NightlightIcon from "@mui/icons-material/Nightlight";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -12,6 +13,8 @@ import DownloadIcon from "@mui/icons-material/Download";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import DehazeIcon from "@mui/icons-material/Dehaze";
+import CloseIcon from "@mui/icons-material/Close";
+import RecentActorsIcon from "@mui/icons-material/RecentActors";
 import capnxtLogo from "../../Assets/images/logo.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -27,6 +30,7 @@ function Home() {
   const [fontColour, setFontColour] = useState("#FAFAFA");
   const [isNightMode, setIsNightMode] = useState(true);
   const [showMobileLinks, setShowMobileLinks] = useState(false);
+  const [openNavLink, setOpenNavLink] = useState(true);
 
   const handleColourMode = () => {
     if (isNightMode) {
@@ -40,9 +44,18 @@ function Home() {
     }
   };
 
+  const handleMobileNavLinks = (scrollToValue) => {
+    window.scrollTo({
+      top: scrollToValue,
+      behavior: "smooth",
+    });
+    setOpenNavLink(true);
+    setShowMobileLinks(false);
+  };
+
   const [isMobileView, setIsMobileView] = useState(false);
   useEffect(() => {
-    console.log(window.innerWidth);
+    // console.log(window.innerWidth);
     if (window.innerWidth <= 768) {
       setIsMobileView(true);
     }
@@ -148,16 +161,38 @@ function Home() {
                         <NightlightIcon className="icon" />
                       )}
                     </div>
-                    <DehazeIcon
-                      className="three-line"
-                      onClick={() => {
-                        if (!showMobileLinks) {
-                          setShowMobileLinks(true);
-                        } else {
-                          setShowMobileLinks(false);
-                        }
-                      }}
-                    />
+
+                    <div className="three-lines">
+                      {openNavLink ? (
+                        <>
+                          {" "}
+                          <DehazeIcon
+                            className="three-line"
+                            onClick={() => {
+                              setOpenNavLink(false);
+                              if (!showMobileLinks) {
+                                setShowMobileLinks(true);
+                              } else {
+                                setShowMobileLinks(false);
+                              }
+                            }}
+                          />
+                        </>
+                      ) : (
+                        <CloseIcon
+                          className="three-line"
+                          onClick={() => {
+                            setOpenNavLink(true);
+                            if (!showMobileLinks) {
+                              setShowMobileLinks(true);
+                            } else {
+                              setShowMobileLinks(false);
+                            }
+                          }}
+                        />
+                      )}
+                    </div>
+
                     {showMobileLinks && (
                       <>
                         {" "}
@@ -166,62 +201,22 @@ function Home() {
                           style={{
                             backgroundColor: bgColour,
                             color: fontColour,
-                            border : `1px solid ${fontColour}`
+                            border: `1px solid ${fontColour}`,
                           }}
                         >
-                          <h1
-                            onClick={() => {
-                              window.scrollTo({
-                                top: 600,
-                                behavior: "smooth",
-                              });
-                              setShowMobileLinks(false);
-                            }}
-                          >
+                          <h1 onClick={() => handleMobileNavLinks(600)}>
                             About
                           </h1>
-                          <h1
-                            onClick={() => {
-                              window.scrollTo({
-                                top: 1350,
-                                behavior: "smooth",
-                              });
-                              setShowMobileLinks(false);
-                            }}
-                          >
+                          <h1 onClick={() => handleMobileNavLinks(1350)}>
                             Skills
                           </h1>
-                          <h1
-                            onClick={() => {
-                              window.scrollTo({
-                                top: 2350,
-                                behavior: "smooth",
-                              });
-                              setShowMobileLinks(false);
-                            }}
-                          >
+                          <h1 onClick={() => handleMobileNavLinks(2350)}>
                             Experience
                           </h1>
-                          <h1
-                            onClick={() => {
-                              window.scrollTo({
-                                top: 3000,
-                                behavior: "smooth",
-                              });
-                              setShowMobileLinks(false);
-                            }}
-                          >
+                          <h1 onClick={() => handleMobileNavLinks(3000)}>
                             Projects
                           </h1>
-                          <h1
-                            onClick={() => {
-                              window.scrollTo({
-                                top: 4000,
-                                behavior: "smooth",
-                              });
-                              setShowMobileLinks(false);
-                            }}
-                          >
+                          <h1 onClick={() => handleMobileNavLinks(4000)}>
                             Contact
                           </h1>
                         </div>
@@ -246,14 +241,28 @@ function Home() {
               <p>Full Stack Developer</p>
             </div>
             <div className="row">
-              <button>
-                {" "}
-                <a href={`${Resume}`} target="_blank">
-                  resume
-                </a>{" "}
-                <DownloadIcon className="icon" />{" "}
+              <a
+                href={`${Akhil2024Resume}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button>
+                  {" "}
+                  Resume
+                  <DownloadIcon className="icon" />{" "}
+                </button>
+              </a>{" "}
+              <button
+                onClick={() => {
+                  window.scrollTo({
+                    top: 4000,
+                    behavior: "smooth", // Add smooth scrolling behavior
+                  });
+                }}
+              >
+                Contact
+                <RecentActorsIcon className="icon" />
               </button>
-              <button>Contact Info</button>
             </div>
             <div
               className="row"
@@ -263,11 +272,16 @@ function Home() {
             >
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.linkedin.com/in/akhil-nayak-3913b31b6/"
               >
                 <LinkedInIcon className="icon" />
               </a>
-              <a target="_blank" href="https://github.com/AKHIL708">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/AKHIL708"
+              >
                 <GitHubIcon className="icon" />
               </a>
             </div>
@@ -621,6 +635,7 @@ function Home() {
               <a
                 href="https://github.com/AKHIL708/eCommereApplication"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 {" "}
                 <button>
@@ -639,16 +654,17 @@ function Home() {
               </div>
               <div
                 className="store-img"
-                style={{ backgroundImage: `url(${ecommerce})` }}
+                style={{ backgroundImage: `url(${todo})` }}
               ></div>
               <h1> Full Stack To Do App</h1>
               <a
                 href="https://github.com/AKHIL708/fullstack-to-do-app"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 {" "}
                 <button>
-                  Githudb <GitHubIcon className="icon" />
+                  Github <GitHubIcon className="icon" />
                 </button>
               </a>
             </div>
@@ -676,6 +692,7 @@ function Home() {
               <LinkedInIcon className="icon" />
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.linkedin.com/in/akhil-nayak-3913b31b6/"
               >
                 <p>LinkedIn</p>
