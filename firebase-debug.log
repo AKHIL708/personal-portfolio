@@ -1,0 +1,34 @@
+[debug] [2024-01-10T18:16:56.584Z] ----------------------------------------------------------------------
+[debug] [2024-01-10T18:16:56.587Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-01-10T18:16:56.588Z] CLI Version:   13.0.2
+[debug] [2024-01-10T18:16:56.588Z] Platform:      win32
+[debug] [2024-01-10T18:16:56.589Z] Node Version:  v20.10.0
+[debug] [2024-01-10T18:16:56.589Z] Time:          Wed Jan 10 2024 23:46:56 GMT+0530 (India Standard Time)
+[debug] [2024-01-10T18:16:56.589Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-10T18:16:56.592Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-01-10T18:16:56.738Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-10T18:16:56.738Z] > authorizing via signed-in user (mounikanayak110@gmail.com)
+[debug] [2024-01-10T18:16:56.739Z] [iam] checking project myselfakhil-cd774 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-01-10T18:16:56.740Z] > refreshing access token with scopes: []
+[debug] [2024-01-10T18:16:56.741Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-01-10T18:16:56.741Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-01-10T18:16:56.913Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-01-10T18:16:56.913Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-01-10T18:16:56.928Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/myselfakhil-cd774:testIamPermissions [none]
+[debug] [2024-01-10T18:16:56.928Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/myselfakhil-cd774:testIamPermissions x-goog-quota-user=projects/myselfakhil-cd774
+[debug] [2024-01-10T18:16:56.928Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/myselfakhil-cd774:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T18:16:57.346Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-01-10T18:16:57.346Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2024-01-10T18:16:58.388Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/myselfakhil-cd774:testIamPermissions 200
+[debug] [2024-01-10T18:16:58.388Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/myselfakhil-cd774:testIamPermissions {}
+[debug] [2024-01-10T18:16:58.388Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project myselfakhil-cd774:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2024-01-10T18:16:58.389Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/myselfakhil-cd774 [none]
+[debug] [2024-01-10T18:16:59.053Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/myselfakhil-cd774 403
+[debug] [2024-01-10T18:16:59.053Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/myselfakhil-cd774 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2024-01-10T18:16:59.055Z] HTTP Error: 403, The caller does not have permission
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier

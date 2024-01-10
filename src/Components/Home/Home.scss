@@ -111,6 +111,7 @@ $grayColour: rgb(71, 71, 71);
           color: #fafafa;
         }
         button:nth-child(2) {
+          padding: 0.82vw 1.2vw;
           .icon {
             font-size: 2vw;
           }
@@ -575,10 +576,12 @@ $grayColour: rgb(71, 71, 71);
           }
           button:hover {
             border: 1px solid #fafafa;
-            background-color: black;
+            background-color: black;          
             color: #fafafa;
           }
           button:nth-child(2) {
+            padding: 1.6vw 0 !important;
+            // margin-top: 8vw;
             .icon {
               font-size: 4.5vw;
             }

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import bitmojiImage from "../../Assets/images/bitmoji.png";
 import personalImage from "../../Assets/images/background-removed-img.jpg";
-import Akhil2024Resume from "../../Assets/resumePdf/Akhil2024Resume.pdf";
+// import Akhil2024Resume from "../../Assets/resumePdf/Akhil2024Resume.pdf";
+import resume from "../../Assets/resumePdf/resume.pdf";
 import ecommerce from "../../Assets/images/ecommerce.png";
 import todo from "../../Assets/images/todo.png";
 import LightModeIcon from "@mui/icons-material/LightMode";
@@ -241,11 +242,7 @@ function Home() {
               <p>Full Stack Developer</p>
             </div>
             <div className="row">
-              <a
-                href={`${Akhil2024Resume}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={`${resume}`} target="_blank" rel="noopener noreferrer">
                 <button>
                   {" "}
                   Resume
@@ -324,7 +321,7 @@ function Home() {
                 >
                   <VerifiedIcon className="icon" />
                   <h1>Experience</h1>
-                  <p>2+ years FSD</p>
+                  <p>1+ years FSD</p>
                 </div>
                 <div
                   className="card"
@@ -338,7 +335,7 @@ function Home() {
               </div>
               <div className="row" data-aos="fade-up" data-aos-duration="950">
                 <p className="card">
-                  As a self-taught full-stack developer with over 2 years of
+                  As a self-taught full-stack developer with over 1+ years of
                   experience, I specialize in creating impactful e-commerce
                   solutions, intricate dashboards, and tailored websites,
                   including projects for educational institutions. My expertise
