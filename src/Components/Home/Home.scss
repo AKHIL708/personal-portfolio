@@ -7,14 +7,12 @@ $grayColour: rgb(71, 71, 71);
   box-shadow: 0px 11px 35px -6px rgba(255, 255, 255, 1);
   overflow-x: hidden;
   .nav-bar {
+    position: sticky !important;
+    top: 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // border: 1px solid black;
     padding: 1.7vw 0;
-    position: sticky;
-    top: 0;
-    z-index: 2;
     transition: $transition-effect;
     .logo {
       cursor: pointer;
@@ -43,6 +41,7 @@ $grayColour: rgb(71, 71, 71);
         font-family: "poppinsMedium";
         font-size: 1.6vw;
       }
+
       .mode-changer {
         transition: $transition-effect;
         .icon {
@@ -494,22 +493,21 @@ $grayColour: rgb(71, 71, 71);
           }
         }
         .three-lines {
-          transition: $transition-effect;
+          // transition: $transition-effect !important;
           .three-line {
-            transition: $transition-effect;
+            transition: $transition-effect !important;
             font-size: 8vw;
           }
         }
         .mobile-nav-links {
           position: absolute;
           border: 1px solid #fafafa;
-          // display: none;
           margin-top: 10vw;
-          // border: 1px solid white;
           right: 0vw;
           padding: 2vw;
           border-radius: 2vw;
           width: 50vw;
+          transition: $transition-effect;
           h1 {
             font-family: "poppinsMedium";
             padding: 2.2vw 1vw;
@@ -576,7 +574,7 @@ $grayColour: rgb(71, 71, 71);
           }
           button:hover {
             border: 1px solid #fafafa;
-            background-color: black;          
+            background-color: black;
             color: #fafafa;
           }
           button:nth-child(2) {

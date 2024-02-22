@@ -371,7 +371,7 @@ function Home() {
                     <VerifiedIcon />
                   </div>
                   <div className="content">
-                    <h1>HTML</h1>
+                    <h1>React js</h1>
                     <p>Experienced</p>
                   </div>
                 </div>
@@ -380,7 +380,7 @@ function Home() {
                     <VerifiedIcon />
                   </div>
                   <div className="content">
-                    <h1>CSS / SASS</h1>
+                    <h1>SCSS / SASS</h1>
                     <p>Experienced</p>
                   </div>
                 </div>
@@ -401,7 +401,7 @@ function Home() {
                     <VerifiedIcon />
                   </div>
                   <div className="content">
-                    <h1>React js</h1>
+                    <h1>React Redux</h1>
                     <p>Experienced</p>
                   </div>
                 </div>
@@ -422,7 +422,7 @@ function Home() {
                   </div>
                   <div className="content">
                     <h1>Figma</h1>
-                    <p>Intermediate</p>
+                    <p>Experienced</p>
                   </div>
                 </div>
               </div>
@@ -564,7 +564,7 @@ function Home() {
                   </div>
                   <div className="content">
                     <h1>DSA</h1>
-                    <p>searching , sorting (medium)</p>
+                    <p>Intermediate</p>
                   </div>
                 </div>
               </div>
