@@ -355,8 +355,10 @@ $grayColour: rgb(71, 71, 71);
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
       .card {
         width: 40vw;
+        margin: 2.5vw 0;
         // padding: 1vw;
         border: 1.5px solid $grayColour;
         border-radius: 2vw;
@@ -395,19 +397,22 @@ $grayColour: rgb(71, 71, 71);
           padding: 2vw 0;
           transition: $transition-effect;
         }
-        button {
-          //   display: none;
-          margin: 1vw 0;
-          transition: $transition-effect;
+        .rows {
+          display: flex;
+          button {
+            //   display: none;
+            margin: 1vw;
+            transition: $transition-effect;
 
-          .icon {
-            font-size: 2vw;
+            .icon {
+              font-size: 2vw;
+            }
           }
-        }
-        button:hover {
-          border: 1px solid #fafafa;
-          background-color: black;
-          color: #fafafa;
+          button:hover {
+            border: 1px solid #fafafa;
+            background-color: black;
+            color: #fafafa;
+          }
         }
       }
     }
@@ -436,17 +441,18 @@ $grayColour: rgb(71, 71, 71);
       display: flex;
       border: 1px solid $grayColour;
       border-radius: 2vw;
-      width: 38vw;
+      width: fit-content;
       align-items: center;
       padding: 2.4vw 2.2vw;
       justify-content: space-between;
       .row {
         display: flex;
         align-items: center;
+        margin: 0 1.5vw;
         cursor: pointer;
         .icon {
           font-size: 2vw;
-          margin-right: 0.5vw;
+          margin-right: 0.2vw;
         }
         p {
           font-family: "senRegular";
@@ -465,6 +471,32 @@ $grayColour: rgb(71, 71, 71);
       font-size: 1.2vw;
     }
   }
+}
+
+/* Hide the default scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  position: absolute;
+  background: transparent; /* Set scrollbar background to transparent */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+/* Set scrollbar handle color */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255); /* Set a slightly transparent white color */
+  border-radius: 8px; /* Set border radius */
+  border: 2px solid #ccc; /* Set border color */
+}
+
+/* Set top and bottom border radius */
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-track-piece:end {
+  background: black;
+  border-radius: 8px; /* Set border radius */
 }
 
 @media screen and (max-width: 768px) {
@@ -796,5 +828,22 @@ $grayColour: rgb(71, 71, 71);
         font-size: 3.2vw;
       }
     }
+  }
+}
+
+.box {
+  .close-icon {
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(206, 206, 206);
+    padding: 0.3vw;
+    position: absolute;
+    top: -10px;
+    right: -10px;
   }
 }

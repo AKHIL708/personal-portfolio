@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import bitmojiImage from "../../Assets/images/bitmoji.png";
 import personalImage from "../../Assets/images/background-removed-img.jpg";
-// import Akhil2024Resume from "../../Assets/resumePdf/Akhil2024Resume.pdf";
 import resume from "../../Assets/resumePdf/resume.pdf";
 import ecommerce from "../../Assets/images/ecommerce.png";
+import cardManagement from "../../Assets/images/cardmanagement.png";
 import todo from "../../Assets/images/todo.png";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import NightlightIcon from "@mui/icons-material/Nightlight";
@@ -14,24 +14,57 @@ import DownloadIcon from "@mui/icons-material/Download";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import DehazeIcon from "@mui/icons-material/Dehaze";
+import ecommercePreview from "../../Assets/videos/ecommercePreview.mp4";
+import todoPreview from "../../Assets/videos/todoPreview.mp4";
+import cardManagementPreview from "../../Assets/videos/cardManagementPreview.mp4";
 import CloseIcon from "@mui/icons-material/Close";
+import OndemandVideoIcon from "@mui/icons-material/OndemandVideo";
+import PhoneIcon from "@mui/icons-material/Phone";
 import RecentActorsIcon from "@mui/icons-material/RecentActors";
 import capnxtLogo from "../../Assets/images/logo.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 // import personalImage from "../../Assets/images/IMG-20240101-WA0001.jpg";
 // import personalImage from "../../Assets/images/IMG-20240101-WA0005.jpg";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
 import "./Home.scss";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 800,
+  bgcolor: "background.paper",
+  boxShadow: 24,
+  p: 4,
+};
 
 function Home() {
   useEffect(() => {
     AOS.init();
   }, []);
+
+  const [openModal, setOpenModal] = useState(false);
+
+  const [showVideo, setShowVideo] = useState(null);
   const [bgColour, setBgColour] = useState("black");
   const [fontColour, setFontColour] = useState("#FAFAFA");
   const [isNightMode, setIsNightMode] = useState(true);
   const [showMobileLinks, setShowMobileLinks] = useState(false);
   const [openNavLink, setOpenNavLink] = useState(true);
+
+  const hanldeCloseModal = () => {
+    setOpenModal(false);
+    setShowVideo(null);
+  };
+  const handleOpenModal = (video) => {
+    setOpenModal(true);
+    setShowVideo(video);
+  };
 
   const handleColourMode = () => {
     if (isNightMode) {
@@ -628,42 +661,65 @@ function Home() {
                 className="store-img"
                 style={{ backgroundImage: `url(${ecommerce})` }}
               ></div>
-              <h1>E-commerce Application</h1>
-              <a
-                href="https://github.com/AKHIL708/eCommereApplication"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {" "}
-                <button>
-                  Github <GitHubIcon className="icon" />
+              <h1>E-commerce Application</h1>{" "}
+              <div className="rows">
+                <a
+                  href="https://github.com/AKHIL708/eCommereApplication"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button>
+                    Github <GitHubIcon className="icon" />
+                  </button>
+                </a>
+                <button onClick={() => handleOpenModal(ecommercePreview)}>
+                  Preview <OndemandVideoIcon className="icon" />
                 </button>
-              </a>
+              </div>
             </div>
             <div className="card">
-              <div className="project-info">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quaerat nisi officiis ipsa eligendi magnam, tempora quisquam
-                  omnis nihil dolorem. Assumenda nam accusamus veritatis
-                  architecto eligendi.
-                </p>
-              </div>
               <div
                 className="store-img"
                 style={{ backgroundImage: `url(${todo})` }}
               ></div>
               <h1> Full Stack To Do App</h1>
-              <a
-                href="https://github.com/AKHIL708/fullstack-to-do-app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {" "}
-                <button>
-                  Github <GitHubIcon className="icon" />
+              <div className="rows">
+                <a
+                  href="https://github.com/AKHIL708/fullstack-to-do-app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {" "}
+                  <button>
+                    Github <GitHubIcon className="icon" />
+                  </button>
+                </a>
+                <button onClick={() => handleOpenModal(todoPreview)}>
+                  Preview <OndemandVideoIcon className="icon" />
                 </button>
-              </a>
+              </div>
+            </div>
+            <div className="card">
+              <div
+                className="store-img"
+                style={{ backgroundImage: `url(${cardManagement})` }}
+              ></div>
+              <h1>Card Management System</h1>
+              <div className="rows">
+                <a
+                  href="https://github.com/AKHIL708/dragDropTaskInterview"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {" "}
+                  <button>
+                    Github <GitHubIcon className="icon" />
+                  </button>
+                </a>
+                <button onClick={() => handleOpenModal(cardManagementPreview)}>
+                  Preview <OndemandVideoIcon className="icon" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -673,6 +729,18 @@ function Home() {
             <h1>Contact Me</h1>
           </header>
           <div className="card">
+            <div
+              className="row"
+              data-aos="fade-right"
+              data-aos-duration="600"
+              // data-aos-delay="200"
+            >
+              <PhoneIcon className="icon" />
+              <a href="tel:9618134708">
+                {" "}
+                <p>9618134708</p>
+              </a>
+            </div>
             <div
               className="row"
               data-aos="fade-right"
@@ -701,6 +769,29 @@ function Home() {
           <p>Copyright © 2024 Akhil Nayak. All Rights Reserved.</p>
         </footer>
       </section>
+
+      <Modal
+        open={openModal}
+        onClose={hanldeCloseModal}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style} className="box">
+          <div className="close-icon" onClick={() => setOpenModal(false)}>
+            <CloseIcon className="icon" />
+          </div>
+          <video
+            autoPlay
+            controls
+            width="100%"
+            height="400"
+            boxShado="1px 2px solid black"
+          >
+            <source src={showVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </Box>
+      </Modal>
     </>
   );
 }
