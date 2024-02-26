@@ -16,7 +16,7 @@ import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import DehazeIcon from "@mui/icons-material/Dehaze";
 import ecommercePreview from "../../Assets/videos/ecommercePreview.mp4";
 import todoPreview from "../../Assets/videos/todoPreview.mp4";
-import cardManagementPreview from "../../Assets/videos/cardManagementPreview.mp4";
+import cardManagementPreview from "../../Assets/videos/cardManagement.mp4";
 import CloseIcon from "@mui/icons-material/Close";
 import OndemandVideoIcon from "@mui/icons-material/OndemandVideo";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -37,10 +37,10 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 800,
+  width: window.innerWidth > 768 ? "60vw" : "80vw",
   bgcolor: "background.paper",
   boxShadow: 24,
-  p: 4,
+  p: "2vw",
 };
 
 function Home() {
@@ -232,27 +232,58 @@ function Home() {
                         {" "}
                         <div
                           className="mobile-nav-links"
+                          data-aos="fade-left"
+                          data-aos-duration="2500"
+                          data-aos-delay="300"
                           style={{
                             backgroundColor: bgColour,
                             color: fontColour,
-                            border: `1px solid ${fontColour}`,
+                            border: `0px solid ${fontColour}`,
+                            boxShadow: `10px 10px 150px -56px ${fontColour}`,
                           }}
                         >
-                          <h1 onClick={() => handleMobileNavLinks(600)}>
+                          <h1
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                            data-aos-delay="50"
+                            onClick={() => handleMobileNavLinks(600)}
+                          >
                             About
                           </h1>
-                          <h1 onClick={() => handleMobileNavLinks(1350)}>
+                          <h1
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                            data-aos-delay="100"
+                            onClick={() => handleMobileNavLinks(1350)}
+                          >
                             Skills
                           </h1>
-                          <h1 onClick={() => handleMobileNavLinks(2350)}>
+                          <h1
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                            data-aos-delay="150"
+                            onClick={() => handleMobileNavLinks(2350)}
+                          >
                             Experience
                           </h1>
-                          <h1 onClick={() => handleMobileNavLinks(3000)}>
+                          <h1
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                            data-aos-delay="200"
+                            onClick={() => handleMobileNavLinks(3000)}
+                          >
                             Projects
                           </h1>
-                          <h1 onClick={() => handleMobileNavLinks(4000)}>
+                          <h1
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                            data-aos-delay="250"
+                            onClick={() => handleMobileNavLinks(4000)}
+                          >
                             Contact
                           </h1>
+
+                          <div className="row"></div>
                         </div>
                       </>
                     )}
@@ -262,6 +293,7 @@ function Home() {
             )}
           </nav>
         </header>
+
         <div className="profile-section">
           <div
             className="col"
@@ -271,7 +303,7 @@ function Home() {
           >
             <div className="row">
               <p>Hello, i'm</p>
-              <h1>Akhil Nayak</h1>
+              <h1>Akhil Chowhan</h1>
               <p>Full Stack Developer</p>
             </div>
             <div className="row">
@@ -649,19 +681,12 @@ function Home() {
             data-aos-delay="300"
           >
             <div className="card">
-              <div className="project-info">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quaerat nisi officiis ipsa eligendi magnam, tempora quisquam
-                  omnis nihil dolorem. Assumenda nam accusamus veritatis
-                  architecto eligendi.
-                </p>
-              </div>
+              <div className="project-info"></div>
               <div
                 className="store-img"
                 style={{ backgroundImage: `url(${ecommerce})` }}
               ></div>
-              <h1>E-commerce Application</h1>{" "}
+              <h1>E-commerce Web Application</h1>{" "}
               <div className="rows">
                 <a
                   href="https://github.com/AKHIL708/eCommereApplication"
@@ -682,7 +707,7 @@ function Home() {
                 className="store-img"
                 style={{ backgroundImage: `url(${todo})` }}
               ></div>
-              <h1> Full Stack To Do App</h1>
+              <h1> Task Management App</h1>
               <div className="rows">
                 <a
                   href="https://github.com/AKHIL708/fullstack-to-do-app"

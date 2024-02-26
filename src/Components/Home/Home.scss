@@ -499,14 +499,28 @@ $grayColour: rgb(71, 71, 71);
   border-radius: 8px; /* Set border radius */
 }
 
+.mobile-navbar {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
+  .mobile-navbar {
+    display: unset;
+  }
   a {
     text-decoration: none;
     color: unset !important;
   }
+
   #Home {
     .nav-bar {
-      padding: 4vw 0;
+      // display: none;
+      padding: 4vw 4vw;
+      position: fixed !important;
+      top: 0;
+      width: 100vw;
+      margin-left: -8vw;
+      z-index: 1;
       // border: 1px solid white;
       .logo {
         h1 {
@@ -533,29 +547,27 @@ $grayColour: rgb(71, 71, 71);
         }
         .mobile-nav-links {
           position: absolute;
-          border: 1px solid #fafafa;
-          margin-top: 10vw;
+          border: 0.5px solid #fafafa;
+          margin-top: 8vw;
           right: 0vw;
-          padding: 2vw;
+          padding: 5vw 2vw;
+          overflow-y: hidden;
           border-radius: 2vw;
-          width: 50vw;
+          height: 100vh;
+          width: 60vw;
+          box-shadow: 10px 10px 150px -56px rgba(255, 255, 255, 0.75);
           transition: $transition-effect;
           h1 {
-            font-family: "poppinsMedium";
-            padding: 2.2vw 1vw;
-            font-size: 5vw;
+            font-family: "senRegular";
+            padding: 3vw;
+            font-size: 6vw;
           }
         }
-        // .three-line:hover + .mobile-nav-links {
-        //   display: unset;
-        // }
-        // .mobile-nav-links:hover {
-        //   display: unset;
-        // }
       }
     }
     .profile-section {
       flex-direction: column-reverse;
+      margin-top: 20vw;
       .col:nth-child(1) {
         //   border: 1px solid black;F
         .row:nth-child(1) {
@@ -764,32 +776,35 @@ $grayColour: rgb(71, 71, 71);
         flex-direction: column;
         .card {
           width: 80vw;
-          margin: 2vw 0;
+          margin: 5vw 0;
           .store-img {
             width: 100%;
             height: 40vw;
-            background-size: contain;
+            background-size: cover;
           }
           h1 {
             font-size: 4.5vw;
           }
-          button {
-            //   display: none;
-            margin: 6vw 0;
-            transition: $transition-effect;
-            font-size: 3vw;
-            padding: 2vw 4vw;
-            width: 25vw;
-            border: 1px solid black;
+          .rows {
+            button {
+              //   display: none;
+              margin: 3vw 0.5vw;
+              transition: $transition-effect;
+              font-size: 3vw;
+              padding: 2vw 4vw;
+              width: 25vw;
+              border: 1px solid black;
 
-            .icon {
-              font-size: 4vw;
+              .icon {
+                font-size: 4vw !important;
+                margin-left: 1vw;
+              }
             }
-          }
-          button:hover {
-            border: 1px solid #fafafa;
-            background-color: black;
-            color: #fafafa;
+            button:hover {
+              border: 1px solid #fafafa;
+              background-color: black;
+              color: #fafafa;
+            }
           }
         }
       }
