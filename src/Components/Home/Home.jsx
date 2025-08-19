@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import bitmojiImage from "../../Assets/images/bitmoji.png";
 import personalImage from "../../Assets/images/background-removed-img.jpg";
+import Pixentech_logo from "../../Assets/images/Pixentech_logo.svg";
 import resume from "../../Assets/resumePdf/resume.pdf";
 import ecommerce from "../../Assets/images/ecommerce.png";
 import cardManagement from "../../Assets/images/cardmanagement.png";
@@ -386,7 +387,7 @@ function Home() {
                 >
                   <VerifiedIcon className="icon" />
                   <h1>Experience</h1>
-                  <p>1+ years FSD</p>
+                  <p>3+ years FSD</p>
                 </div>
                 <div
                   className="card"
@@ -400,16 +401,15 @@ function Home() {
               </div>
               <div className="row" data-aos="fade-up" data-aos-duration="950">
                 <p className="card">
-                  As a self-taught full-stack developer with over 1+ years of
-                  experience, I specialize in creating impactful e-commerce
-                  solutions, intricate dashboards, and tailored websites,
-                  including projects for educational institutions. My expertise
-                  lies in crafting dynamic and visually engaging web
-                  experiences, often incorporating animations to elevate user
-                  interaction. Possessing a versatile skill set in both frontend
-                  and backend technologies, I am committed to continuous
-                  learning and adaptability, ensuring the delivery of
-                  cutting-edge solutions that align with industry trends.
+                  I'm a Software Engineer specializing in the MERN stack,
+                  passionate about building high-performance web applications
+                  with seamless user experiences. I’ve led development on
+                  dynamic platforms—from real estate and job matching systems to
+                  global-scale game interfaces—handling everything from backend
+                  architecture to frontend optimization. I thrive in fast-paced,
+                  complex environments, focusing on scalable, efficient
+                  solutions that solve real-world problems and make technology
+                  more accessible.
                 </p>
               </div>
             </div>
@@ -643,9 +643,22 @@ function Home() {
           </header>
           <div className="col">
             <div
-              className="store-img"
-              style={{ backgroundImage: `url(${capnxtLogo})` }}
-            ></div>
+              style={{
+                backgroundColor: "white",
+                padding: "2vw",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                // border: "1px solid red",
+                marginBottom: "auto",
+                marginTop: "1.2vw",
+              }}
+            >
+              <div
+                className="store-img"
+                style={{ backgroundImage: `url(${Pixentech_logo})` }}
+              ></div>
+            </div>
             <div
               className="row"
               data-aos="fade-left"
@@ -653,101 +666,148 @@ function Home() {
               data-aos-delay="200"
             >
               <h1>
-                CapNxt Technologies <span>1+ year (intern)</span>
+                Pixentech Pvt Ltd <span>1+ year (SDE 1)</span>
               </h1>
               <p>
-                During my one-year internship at CapNXT Technologies, I played a
-                pivotal role in the development of diverse digital solutions. I
-                actively contributed to the creation of responsive websites,
-                demonstrating proficiency in crafting interfaces that adapt
-                seamlessly across various devices. Additionally, my involvement
-                extended to designing and implementing dashboards, enhancing
-                user experiences through interactive and visually appealing data
-                representations.
+                At Pixentech Pvt Ltd, I work as a Software Engineer I, where I
+                drive the development of scalable, high-performance web
+                applications and real-time gaming solutions. My contributions
+                include building a full-stack application with an admin panel
+                and APIs that improved operational efficiency by 30% and reduced
+                response times by 40%. I migrated backend communication from
+                GraphQL to WebSockets, cutting response latency by 50% and
+                enhancing real-time interactions. I also designed a robust
+                betting panel that boosted user engagement by 35%, and led the
+                end-to-end development of the Keno game, mentoring a junior
+                developer in the process. Additionally, I delivered the frontend
+                for the PBF Project, showcased at ICE Gaming Global 2025, and
+                integrated Google Analytics to enable data-driven insights,
+                optimizing both performance and user experience.
               </p>
             </div>
           </div>
         </div>
-
-        <div className="projects">
+        <div
+          className="projects"
+          style={{ textAlign: "center", padding: "50px 20px" }}
+        >
           <header>
             <p>My Recent</p>
             <h1>Projects</h1>
           </header>
+
           <div
-            className="cards"
-            data-aos="fade-right"
-            data-aos-duration="950"
-            data-aos-delay="300"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "stretch",
+              gap: "30px",
+              flexWrap: "wrap",
+              marginTop: "40px",
+            }}
           >
-            <div className="card">
-              <div className="project-info"></div>
-              <div
-                className="store-img"
-                style={{ backgroundImage: `url(${ecommerce})` }}
-              ></div>
-              <h1>E-commerce Web Application</h1>{" "}
-              <div className="rows">
-                <a
-                  href="https://github.com/AKHIL708/eCommereApplication"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button>
-                    Github <GitHubIcon className="icon" />
-                  </button>
-                </a>
-                <button onClick={() => handleOpenModal(ecommercePreview)}>
-                  Preview <OndemandVideoIcon className="icon" />
-                </button>
-              </div>
+            {/* PlayBookFusion */}
+            <div
+              style={{
+                flex: "1 1 400px",
+                maxWidth: "500px",
+                backgroundColor: "#111",
+                color: "#fff",
+                padding: "30px",
+                borderRadius: "20px",
+                boxShadow: "0 8px 25px rgba(0,0,0,0.4)",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
+            >
+              <h1 style={{ marginBottom: "15px" }}>
+                PlayBookFusion (Football Game)
+              </h1>
+              <p
+                style={{
+                  fontSize: "14px",
+                  lineHeight: "1.6",
+                  marginBottom: "25px",
+                }}
+              >
+                Built the entire frontend using React.js & TypeScript, improving
+                performance by 40% through optimized rendering. Implemented
+                adaptive language & currency configurations for a global user
+                experience.
+              </p>
+              <a
+                href="https://stag-play.playbook-fusion.com/#/home"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-block",
+                  padding: "12px 25px",
+                  backgroundColor: "#fff",
+                  color: "#000",
+                  borderRadius: "25px",
+                  fontWeight: "bold",
+                  textDecoration: "none",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseOver={(e) => (e.target.style.backgroundColor = "#eee")}
+                onMouseOut={(e) => (e.target.style.backgroundColor = "#fff")}
+              >
+                Live Demo
+              </a>
             </div>
-            <div className="card">
-              <div
-                className="store-img"
-                style={{ backgroundImage: `url(${todo})` }}
-              ></div>
-              <h1> Task Management App</h1>
-              <div className="rows">
-                <a
-                  href="https://github.com/AKHIL708/fullstack-to-do-app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {" "}
-                  <button>
-                    Github <GitHubIcon className="icon" />
-                  </button>
-                </a>
-                <button onClick={() => handleOpenModal(todoPreview)}>
-                  Preview <OndemandVideoIcon className="icon" />
-                </button>
-              </div>
-            </div>
-            <div className="card">
-              <div
-                className="store-img"
-                style={{ backgroundImage: `url(${cardManagement})` }}
-              ></div>
-              <h1>Card Management System</h1>
-              <div className="rows">
-                <a
-                  href="https://github.com/AKHIL708/dragDropTaskInterview"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {" "}
-                  <button>
-                    Github <GitHubIcon className="icon" />
-                  </button>
-                </a>
-                <button onClick={() => handleOpenModal(cardManagementPreview)}>
-                  Preview <OndemandVideoIcon className="icon" />
-                </button>
-              </div>
+
+            {/* ProvablyGames */}
+            <div
+              style={{
+                flex: "1 1 400px",
+                maxWidth: "500px",
+                backgroundColor: "#111",
+                color: "#fff",
+                padding: "30px",
+                borderRadius: "20px",
+                boxShadow: "0 8px 25px rgba(0,0,0,0.4)",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
+            >
+              <h1 style={{ marginBottom: "15px" }}>ProvablyGames Platform</h1>
+              <p
+                style={{
+                  fontSize: "14px",
+                  lineHeight: "1.6",
+                  marginBottom: "25px",
+                }}
+              >
+                Refactored 8 provably fair games (Plinko, Crash, etc.) by
+                migrating from GraphQL to Socket.IO, cutting response times by
+                60%. Redesigned UI/UX, increasing engagement by 25% and
+                retention by 30%.
+              </p>
+              <a
+                href="https://lobby.pixentech.com/lobby/lobby.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-block",
+                  padding: "12px 25px",
+                  backgroundColor: "#fff",
+                  color: "#000",
+                  borderRadius: "25px",
+                  fontWeight: "bold",
+                  textDecoration: "none",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseOver={(e) => (e.target.style.backgroundColor = "#eee")}
+                onMouseOut={(e) => (e.target.style.backgroundColor = "#fff")}
+              >
+                Live Demo
+              </a>
             </div>
           </div>
         </div>
+
         <div className="get-in-touch">
           <header>
             <p>Get in Touch</p>
